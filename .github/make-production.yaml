@@ -1,0 +1,50 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+name: Build and push client codes to the production repository
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python v3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies for bdp-document
+      run: |
+        python -m pip install --upgrade pip
+        pip install sphinx sphinx_rtd_theme
+    - name: Build the bdp-document
+      run: make html
+    - name: Checkout big-data-processor
+      uses: actions/checkout@v2
+      with:
+        repository: big-data-processor/big-data-processor
+        token: ${{ secrets.chiyang_pat }}
+        path: ./bdp-production
+    - name: Update the production builds
+      run: |
+        mv ~/work/bdp-document/bdp-document/bdp-production ~/work/bdp-bdp-document/bdp-production
+        rm -rf ~/work/bdp-document/bdp-production/public/docs
+        cp -rf ~/work/bdp-document/bdp-document/build/html ~/work/bdp-document/bdp-production/public/docs
+        ls -lah ~/work/bdp-document/bdp-production/public/docs
+    - name: Commit production codes
+      run: |
+        cd ~/work/bdp-document/bdp-production
+        git config --local user.email "chiyang1118@gmail.com"
+        git config --local user.name "Chi Yang"
+        git add -A
+        git commit -m "Push documentations only at $(date)"
+        cp -rf ~/work/bdp-document/bdp-production ~/work/bdp-document/bdp-document/production-build
+    - name: Push production codes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.chiyang_pat }}
+        directory: './production-build'
+        repository: big-data-processor/big-data-processor
