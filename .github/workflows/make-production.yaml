@@ -30,7 +30,7 @@ jobs:
         path: ./bdp-production
     - name: Update the production builds
       run: |
-        mv ~/work/bdp-document/bdp-document/bdp-production ~/work/bdp-bdp-document/bdp-production
+        mv ~/work/bdp-document/bdp-document/bdp-production ~/work/bdp-document/bdp-production
         rm -rf ~/work/bdp-document/bdp-production/public/docs
         cp -rf ~/work/bdp-document/bdp-document/build/html ~/work/bdp-document/bdp-production/public/docs
         ls -lah ~/work/bdp-document/bdp-production/public/docs
