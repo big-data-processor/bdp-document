@@ -26,35 +26,30 @@ The coolest part is that we also provides the web proxy functionality. Our Page 
 
 .. toctree::
     :maxdepth: 4
-    :caption: Concept
+    :caption: Getting Started
 
-    Full steps to construct a pipeline<tutorials/tutorial-full-step-pipelines>
+..  Full steps to construct a pipeline<tutorials/tutorial-full-step-pipelines>
     Task deployment on Google Cloud Platform<tutorials/tutorial-task-deploy-GCP>
     Non-root MongoDB Installation<tutorials/mongodb-non-root-installation>
 
-.. toctree::
-    :maxdepth: 4
-    :caption: Quick Start
 
-    Full steps to construct a pipeline<tutorials/tutorial-full-step-pipelines>
-    Task deployment on Google Cloud Platform<tutorials/tutorial-task-deploy-GCP>
-    Non-root MongoDB Installation<tutorials/mongodb-non-root-installation>
-    
 .. toctree::
     :maxdepth: 4
     :caption: Basic usages
 
-    Manage projects
-    Import files
-    Execute tasks
-    Collect results
-.. For users<web-interface/the-web-interface-user>
-    For administrators<web-interface/the-web-interface-admin>
-    For pipeline developers<web-interface/the-web-interface-pipeline-dev>
+..  Full steps to construct a pipeline<tutorials/tutorial-full-step-pipelines>
+    Task deployment on Google Cloud Platform<tutorials/tutorial-task-deploy-GCP>
+    Non-root MongoDB Installation<tutorials/mongodb-non-root-installation>
+    
 
 .. toctree::
     :maxdepth: 4
     :caption: Package Constructions
+
+    Introduction
+    Configure Packages
+    Define Tasks
+    Make workflows
 
 .. Best practice to plan your tasks<pipieline-development/task-best-practice>
     Manage Packages
@@ -66,10 +61,19 @@ The coolest part is that we also provides the web proxy functionality. Our Page 
 
 .. toctree::
     :maxdepth: 4
+    :caption: Workflow Playbook
+
+    Concept and Motivation<workflow-playbook/concept>
+    Overview<workflow-playbook/overview>
+    Basics<workflow-playbook/basics>
+    Filter Functions<workflow-playbook/filter-functions>
+
+
+.. toctree::
+    :maxdepth: 4
     :caption: System Administrations
 
     User managment
-    Package settings
     Enable Google 3rd party sign-in<administration/allow-google-sign-in>
     Enable Google reCAPTCHA
 
