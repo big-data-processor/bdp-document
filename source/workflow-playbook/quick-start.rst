@@ -1,6 +1,6 @@
-=====================================
-A quick overview of Workflow Playbook
-=====================================
+==================================
+A quick start of Workflow Playbook
+==================================
 
 The Workflow Playbook is written in the YAML format. It is a human-readable format,
 so you may proceed to read this page to get a quick understand of Workflow Playbook.
@@ -97,6 +97,8 @@ This is useful especially when the argument length is not fixed. Developers may 
     
     There are many kinds of multi-line syntaxes, such as ``>``, ``>+``, ``|``, ``|+``, ``|-`` and others. They all have different meanings.
     For a more detailed multiline mode, please see `Multiline syntax in the YAML format <https://yaml-multiline.info/>`_
+
+    For most of the time, you only use ``|`` and ``>-``. You use ``|`` after ``args:`` to specify arguments like the above example, and you use ``>-`` to specify a one liner argument, such as the command argument of ``bash -c``.
 
 
 --------------------------

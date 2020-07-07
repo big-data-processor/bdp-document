@@ -1,20 +1,9 @@
-========================
-Concepts and Motivations
-========================
+=================================
+Introduction of Workflow Playbook
+=================================
 
-Define tasks in a concise format
-================================
-The workflow playbook is a concise task configuration format for fast and portable workflow constructions.
-It is written in the `YAML <http://yaml.org/>`_ format and is inspired by the `Ansible Playbook <https://docs.ansible.com/ansible/latest/user_guide/playbooks.html>`_.
-With the templating concept, we can simplify the workflow definitions. It is desinged to be human-readable format.
-
-Compared to the `Common Workflow Language (CWL) <https://www.commonwl.org/>`_, workflow playbook is more concise and easy to write.
-The CWL is also written in the YAML format and provides detailed configurations to define tasks and workflows. 
-We believe that the workflow definitions can be more concise through templating, instead of verbose configurations.
-Besides, we can easily write for-loops or do if-else conditions via templating while the CWL currently hasn't supprted them.
-
-We expect this concise format is easy enough for non-expert people to understand and write without learning additional domain-specific languages.
-In addition, this workflow playbook is seamlessly integrated on the Big Data Processor so that we can write the worklfow playbook directly on the web page.
+Originally, we developed the Workflow Playbook for bioinforamticians. The goal is to simplify task definitions and make the definitions concise and intuitive.
+This task definition language can be used for general purposes and is not limited to the field of bioinformatics.
 
 
 Essential/minimal elements to define a task
@@ -63,25 +52,34 @@ This is fine on a single PC. When execute the task on the cloud or on a high-per
 In another scenario, if workflow developers uses pbs/sge job scripts to define their workflows, it forces users to run on the HPC environments. This isn't a good portable workflow.
 Therefore, workflow developers should focus only on the task essentials without worrying about the runtime environments. Runtime should be taken care by the workflow runner, here, in our solution, Workflow Player. We used task-adapters to handle this for you. The most important part is that the adapter can be easily customized to fit many kinds of runtime environments. A base adapter factory class can be extended to different use cases. In fact, we see the adapters as part of portable workflows. namely, ``a protable workflow = Workflow Playbook + (customized) Task Adapters + (custom filter functions)``. Don't worry, we are planning to implement many generalized adapters for everyone to use.
 
-No specifying input/output
-==========================
-To further simplify the task configurations, workflow developers need not define inputs/outputs in workflow playbook. Only the three elements should be focused: ``executable``, ``arguments``, and ``container image``. The information of inputs/outputs can be specified via the arguments, but this depends on tools. Most bioinformatics tools allow specify output paths or output prefix to customize the outputs. In this way, a task can be defined before knowing its output contents.
+Expose output files/folders as arguments
+========================================
 
-In addition, bioinformatics tools may take one input folder as an arguments and output files in this input folder. Some workflow systems consider input data as read-only. Therefore, to achieve this output-to-input-folder behavior, staging inputs to outputs may be required to prevent writing conflicts. The writing conflicts occur which multiple processes write to the same file at the same time. Usually, the first process will have priviledge to write and lock the file. Other process cannot write the files and this causes the writing conflicts.
+To further simplify the task configurations, workflow developers need not define inputs/outputs in workflow playbook.
+Only the three elements should be focused: ``executable``, ``arguments``, and ``container image``.
+The information of inputs/outputs can be specified via the arguments.
+The Workflow Playbook sees the output and input paths as file paths and is not aware of their differences.
+They are only arguments.
 
-Since our Workflow Playbook does not aware of inputs/outputs, we didn't avoid the writing conflicts through playbook. We consider that, for most cases, writing conflicts can be avoid by giving different output file names if output files are in the same folder. In addition, if a job is running inside a container, paths such as ``/tmp`` and ``/home/biodocker`` are separated among multiple jobs. Given the same tmp file name inside ``/tmp`` won't cause the write conflict.
 
-This is a trade-off here. Workflow systems handle the inputs/outputs to prevent writing conflicts but might require additional step to copy/move files. This may take additional time especially when the file sizes are large. In addition, bioinformatics pipelines may keep one single folder and all files are organized in a specific order. By repetively using this folder as an input argument, output files are generated somewhere inside this folder. In this case that the output folder is the input folder, we leave the issue of the write-conflict prevention to developers. If avoiding the writing conflicts in development stage, workflow system won't need this staging file procedure.
 
-Another trade-off here is that we cannot directly present a workflow in a directed acyclic graph throgh workflow playbook, since the playbook itself does not aware of inputs/outputs. The workflow graph increases our understanding of a workflow, but it does not affect the workflow execution. However, additional tool will be available to help to parse and draw the directed asyclic graph for workflows.
+In-place file structure
+=======================
 
-**In overall, we sacrifice a bit quality in exchange of convenience.**
+A task may take one input folder as an arguments and output files in this input folder.
+Namely, the task outputs files into its input folders.
+Some workflow systems consider input data to be read-only. Therefore, to achieve this output-to-input-folder behavior, staging inputs to outputs may be required to prevent writing conflicts.
 
-Workflow Playbook focuses more on convenience.
-==============================================
-You may noticed that our goal is not to fit all circumstances of making every bioinformatics tools part of a pipeline.
-We focus more on defining a portable workflow easily and quickly but maintaining its completeness and portability.
 
-Although we support most bioinformatics tool but not all, the non-supported circumstances are considered as a very small proportion and these are unusual cases.
-Usually there will be some workarounds to fix the non-supported proportion.
-For example, a tool that we cannot avoid the writing conflicts by chaning the filename through setting arguments or environmental variables when this tool will be executed concurrently for each of input files. We may avoid this by using a containerized versions of the tool so that every temp files of the same name are produced in different containers. Alternatively, we can manually stage the files/folders.
+The writing conflicts occur which multiple processes write to the same file at the same time. 
+Usually, the first process will have priviledge to write and lock the file. Other process cannot write the files and this causes the writing conflicts.
+Since our Workflow Playbook does not aware of inputs/outputs, we didn't avoid the writing conflicts through playbook.
+We consider that, for most cases, the writing conflicts can be avoid by giving different output file names if output files are in the same folder.
+In addition, if a job is running inside a container, paths such as ``/tmp`` and ``/home/biodocker`` are independent among multiple jobs. Given the same tmp file name inside ``/tmp`` won't cause the write conflict.
+
+This is a trade-off here. Workflow systems handle the inputs/outputs to prevent the writing conflicts but might require additional step to copy/move files.
+This may take additional time especially when the file sizes are large.
+In addition, bioinformatics pipelines may keep one single folder and all files are organized in a specific order.
+By repetively using this folder as an input argument, output files are generated somewhere inside this folder.
+In this case that the output folder is the input folder, we leave the issue of the write-conflict prevention to developers.
+If avoiding the writing conflicts in development stage, workflow system won't need this staging file procedure.

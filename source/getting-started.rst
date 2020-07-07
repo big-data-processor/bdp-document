@@ -2,8 +2,7 @@
 Getting Started
 ===============
 
-Setup
-=====
+After 
 
 Install a package
 =================

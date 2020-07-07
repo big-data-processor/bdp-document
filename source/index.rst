@@ -5,42 +5,24 @@
 
 Welcome to Big Data Processor's documentation!
 ==============================================
-Big Data Processor (BDP) is a light-weight, yet complete and scalable workflow platform.
-This web workbench mainly focuses on the workflow **portability**, **reproducibility** and **reusiblity**.
-It is generic so that workflow builders can freely design their workflows into portable packages.
-
-Additinally, it supports **portable data visualizations**.
-
-Most workflow management systems mainly help us to execute and monitor workflows.
-After that, users offten have to find their way to explore results.
-Here, in this workbench, workflow builders are allowed to freely develop web pages for their workflows 
-both to provide guidance for workflow executions and to provide interactive data visualizations.
-
-With these customized web pages, 
-users can visualize results interactively right after workflow executions.
-
-
-The goal is to make **All on web pages!**.
-
-This web workbench provides web interfaces that covers project management, workflow executions, task monitoring, and package building.
-Packages of BDP are in a portable format that can be installed on every BDP hosts by just mouse clicks.
-Then, these workflows in the packages are ready to run with near-zero configurations!
-
-The coolest part is that our Page system also provides the web proxy functionality.
-Our Page system can not only serve the above mentioned customized web pages, but can also serve containerized web services or even desktop applications, such as R/Shiny apps, RStudio, Jupyter Notebook or Matlab IDE and many more!
 
 .. toctree::
     :maxdepth: 1
 
+    Introduction<introduction>
     Installation<installation>
     Getting Started<getting-started>
 
 .. toctree::
     :maxdepth: 4
-    :caption: Introduction
+    :caption: Fundamentals
 
-    Concepts<introduction/concepts>
-    System Architecture<introduction/system-architecture>
+    Concepts<fundamentals/concepts>
+    Terms and Data Entity<fundamentals/terms>
+    Privilege<fundamentals/privilege>
+    System Architecture<fundamentals/system-architecture>
+    
+    Task Adapter<fundamentals/task-adapter>
 
 .. toctree::
     :maxdepth: 4
@@ -64,6 +46,12 @@ Our Page system can not only serve the above mentioned customized web pages, but
 .. toctree::
     :maxdepth: 4
     :caption: Workflow Playbook
+
+    Introduction<workflow-playbook/introduction>
+    Quick Start<workflow-playbook/quick-start>
+    Basics<workflow-playbook/basics>
+    Filter Functions<workflow-playbook/filter-functions>
+    An Example on BDP<workflow-playbook/example>
 
 .. toctree::
     :maxdepth: 4
