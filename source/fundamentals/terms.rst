@@ -41,11 +41,9 @@ The Big Data Processor controls the direct children of the Project folder. There
 File Tags
 ---------
 
-A DataFile record comes with its own tags. These file tags are used to tell whether a DataFile record is valid to be an input argument of a :ref:`Task <Task>`.
-File Tags can be used as guards to prevent users to select invalid files or used as filters to narrow down the number of valid DataFile records.
-In addition, File Tags are also used to 
-
-Users can also specify their desired tags to distinguish DataFile records.
+Every DataFile record can have its own tags. These file tags are mainly used to tell whether a DataFile record is valid to be an input argument of a :ref:`Task <Task>`.
+That is, these Fle Tags can be used as guards to prevent users to select invalid files or used as filters to narrow down the number of valid DataFile records.
+In addition, Users can also specify their desired tags to distinguish DataFile records.
 
 
 
