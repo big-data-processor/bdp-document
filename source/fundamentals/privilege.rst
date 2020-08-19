@@ -2,10 +2,9 @@
 Privilege
 ==========
 
-Big Data Processor allows basic priviledge settings of Project and Package to provide multi-user working environments.
+To provide multi-user working environments, Big Data Processor provides basic priviledge settings for Projects and Packages.
 
 
-.. _project-privilege:
 
 Project Privilege
 =================

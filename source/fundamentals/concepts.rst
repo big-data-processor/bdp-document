@@ -7,16 +7,16 @@ In this section, we introduce several basic concepts and terms in the Big Data P
 User Roles
 ==========
 
-We categorized these roles into 1) users, 2) developers, and 3) administrators.
+We categorized user roles into 1) users, 2) developers, and 3) administrators.
 
-- The **users**, including guests, normal users and power users, execute tasks without changing task settings.
-- The **developers**, including task builders and task managers, not only execute tasks but also construct tasks, workflows and packages.
-- The **administrators** can manage users and do all the above mentioned actions.
+- **Plain users**, including normal users and power users, can create Project, execute Tasks, and manage DataFile and Result records.
+- **Developers**, including task builders and task managers, can operate what a plain user can do. Additionally, a developer can construct Packages by defining Tasks and workflows.
+- **Administrators** can manage user priviledges and do all the above mentioned actions. An administrator can see and edit all projects and packages with full priviledges.
 
 BDP provides basic user priviledges for the above user roles. Please see the administration sections.
 
 
-System Operation Scheme
+User Operation Scheme
 =======================
 
 .. image:: ../images/BDP_system_operation_scheme.png
@@ -24,15 +24,15 @@ System Operation Scheme
 
 As shown in the above figure of operating scheme, a Project contains DataFiles and Results, 
 while Task definitions and customized Pages are stored in a Package.
-Projects are created by users and Packages are created by developers.
+Projects are created by plain users and Packages are created by developers. 
 
-A basic usage cycle (highlighted in the blue color) may start by creating a project with selected packages.
-Users can upload required files to this project and these files become DataFiles.
-Then, users can execute tasks that belong to the selected packages.
-After setting the tasks parameters, the selected task can be executed and all provenance of the task is stored as a Result. 
+A basic data cycle (highlighted in the blue color) may start by creating a project with selected packages.
+Users can then upload files to this project and these files become DataFile records.
+After tagging appropriate file tags to DataFile records, users can execute tasks that belong to the selected packages.
+Once after task parameters are set, the task is executing and all the provenance of a task is stored as a Result record. 
 
+Almost everything related to a task execution is recorded in a Result.
 You may see the Result records as histories.
-Almost everything that related to a task execution is recorded in a Result.
 A Result records task status, parameters including input/output files, 
 the runtime configurations, standard output/error, the task commands, the running time and all related information.
 After task executions, new DataFile records may be created in the Project and these DataFiles may be used as inputs of another task.
@@ -71,7 +71,7 @@ Portable workflow execution
 We recommended that developers apply the container techniques to make workflow protable.
 Each task in a workflow is encouraged to be executed through a container, such as Docker or Singularity container.
 A container carries its good runtime environemnts.
-The dependent libraries or the required tools can be pre-installed in side the container image,
+The dependent libraries or the required tools can be pre-installed inside the container image,
 so that tasks are guaranteed to be executed successfully inside the well-defined container environment.
 This makes tasks portable.
 

@@ -18,7 +18,7 @@ Welcome to Big Data Processor's documentation!
     :caption: Fundamentals
 
     Concepts<fundamentals/concepts>
-    Terms and Data Entity<fundamentals/terms>
+    Terminology<fundamentals/terms>
     Privilege<fundamentals/privilege>
     System Architecture<fundamentals/system-architecture>
     
