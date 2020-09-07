@@ -72,7 +72,7 @@ Some workflow systems consider input data to be read-only. Therefore, to achieve
 
 
 The writing conflicts occur which multiple processes write to the same file at the same time. 
-Usually, the first process will have priviledge to write and lock the file. Other process cannot write the files and this causes the writing conflicts.
+Usually, the first process will have privilege to write and lock the file. Other process cannot write the files and this causes the writing conflicts.
 Since our Workflow Playbook does not aware of inputs/outputs, we didn't avoid the writing conflicts through playbook.
 We consider that, for most cases, the writing conflicts can be avoid by giving different output file names if output files are in the same folder.
 In addition, if a job is running inside a container, paths such as ``/tmp`` and ``/home/biodocker`` are independent among multiple jobs. Given the same tmp file name inside ``/tmp`` won't cause the write conflict.

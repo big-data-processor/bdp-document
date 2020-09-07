@@ -11,9 +11,9 @@ We categorized user roles into 1) users, 2) developers, and 3) administrators.
 
 - **Plain users**, including normal users and power users, can create Project, execute Tasks, and manage DataFile and Result records.
 - **Developers**, including task builders and task managers, can operate what a plain user can do. Additionally, a developer can construct Packages by defining Tasks and workflows.
-- **Administrators** can manage user priviledges and do all the above mentioned actions. An administrator can see and edit all projects and packages with full priviledges.
+- **Administrators** can manage user privileges and do all the above mentioned actions. An administrator can see and edit all projects and packages with full privileges.
 
-BDP provides basic user priviledges for the above user roles. Please see the administration sections.
+BDP provides basic user privileges for the above user roles. Please see the administration sections.
 
 
 User Operation Scheme

@@ -199,7 +199,7 @@ The above example uses the bwa to map sequencing data to a reference genome.
     * The ``option`` can set additional settings for workflow runner. Here, this option will be sent to our ``task-adapter``.
       The content of this ``option`` depends on the ``adapters``. You can set some runtime resources as default values, such as ``cpus`` or ``mem``.
       In this example, we can use ``setUser: true`` to notify the adapter that ``--user`` must be set when running the docker image.
-      This prevents outputing files with root priviledges.
+      This prevents outputing files with root privileges.
     * The ``args`` can have two types: array or string. In this example, we can use the array type and you can see lines 12-18 begins with ``-`` .
       Values leading with the ``-`` will be resolved as argument values in order. This is used when there is a fixed number of known arguments. For a non-fixed number of arguments, use the string type. The string type is a more advanced usage and allows you to fully customized your arguments. Basically, the multi-line mode of the YAML will be used by using ``args: |`` or ``args: >``.  Under the hood, this string is expected as in YAML format and will be resolved as an array. So you can use ``{% for ... %} ... {% endfor %}`` to produce arguments of uncertain number.
     * The ``pathMapping`` filter function transforms your host path to a path inside the container. The Workflow runner will do the volume mapping for you. This is probably the most frequently used filter function.

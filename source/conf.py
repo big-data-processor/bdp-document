@@ -19,8 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Bio-Data Processor'
-copyright = '2018, Chi Yang'
+project = 'Big Data Processor'
+copyright = '2020, Chi Yang'
 author = 'Chi Yang'
 
 # The short X.Y version
@@ -115,7 +115,7 @@ html_logo = './bdpstatic/bdp-logo-dark.svg'
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Bio-DataProcessordoc'
+htmlhelp_basename = 'Big Data Processor Document'
 
 
 # -- Options for LaTeX output ------------------------------------------------

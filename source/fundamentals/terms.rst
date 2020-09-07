@@ -20,7 +20,7 @@ Project
 
 A Project is a collection of :ref:`DataFiles <DataFile>` and :ref:`Results <Result>`.
 A project is created with a name and an optional description. Several :ref:`Packages <Package>` can also be selected to use in the project.
-A project can also be shared among users. Please see the :doc:`Priviledge <./privilege>` for more information.
+A project can also be shared among users. Please see the :doc:`Privilege <./privilege>` for more information.
 The Project-related information can be changed after creation.
 
 Under the hood, each Project has a corresponding folder to store all the files or folders which correspond to DataFile records.
@@ -101,7 +101,7 @@ A Task is an execution unit on the Big Data Processor. A Task is categorized int
 
 3. A child Task is like the standard task except that it must be included inside a workflow. A child-typed Task is hidden from user selection so that it cannot be executed directly.
 
-4. A system Task can only be executed by system administrators. it is hidden from non-priviledged users.
+4. A system Task can only be executed by system administrators. it is hidden from non-privileged users.
 
 
 As mentioned in :ref:`the File Tag section <File Tags>`, we can set valid rules for file tags of input/output file arguments of a Task. The input file tags are filters to prevent users to select invalid DataFile records.
