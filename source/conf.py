@@ -19,8 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Bio-Data Processor'
-copyright = '2018, Chi Yang'
+project = 'Big Data Processor'
+copyright = '2020, Chi Yang'
 author = 'Chi Yang'
 
 # The short X.Y version
@@ -115,7 +115,7 @@ html_logo = './bdpstatic/bdp-logo-dark.svg'
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Bio-DataProcessordoc'
+htmlhelp_basename = 'Big Data Processor Document'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -164,7 +164,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'BigDataProcessor', 'Big Data Processor Documentation',
-     author, 'BigDataProcessor', 'One line description of project.',
+     author, 'Chi Yang', 'The next generation data science workbench',
      'Miscellaneous'),
 ]
 
@@ -175,3 +175,7 @@ texinfo_documents = [
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+extensions = [
+    'sphinx.ext.autosectionlabel'
+]
