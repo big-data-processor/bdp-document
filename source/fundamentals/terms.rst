@@ -120,7 +120,7 @@ Developers can set the Tag Match Rules for arguments of input DataFile records. 
 -----------------
 Workflow Playbook
 -----------------
-Workflow Playbook is a concise YAML format to configure a Task. A Task on BDP comes with one Workflow Playbook.
+Workflow Playbook is a concise YAML format to configure a Task. A Task on BDP contains one Workflow Playbook.
 The Workflow Playbook can be edited on web pages and is automatically organized into the ``tasks`` folder inside the package folder. You can see the web page when you are setting the Task. As the name suggested, we can define a workflow as a standard or child Task. Then, we build a mega-workflow as a workflow-typed Task from these Tasks.
 
 For further information, please see the :doc:`the introduction of Workflow Playbook<../workflow-playbook/introduction>`.

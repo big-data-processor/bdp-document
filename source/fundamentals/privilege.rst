@@ -108,16 +108,16 @@ User privileges
 ===============
 
 In addition to the privileges of Project and Package, Big Data Processor also comes with basic user privilege settings.
-The user privileges must be satisfied first in order to grant the Package or Project privileges.
-For example, to be able to view Package contents, users need to be `Task Builders` or higher.
-Even if a normal user is chosen as a `Package Viewers`, that user is not able to see the Package contents.
+The user privileges must be satisfied first and the granted Package or Project privileges are thus valid.
+For example, to be able to view Package contents, users need to be ``Task Builders`` or higher.
+Even if a normal user is chosen as a ``Package Viewers``, that user is not able to see the Package contents.
 The following table lists the user positions and their privileges.
 
 
 +-------------------+--------------+-----------------+----------------+----------------+----------------+----------------+
 | Position          | View Project | Create Project  | Manage Project | View Package   | Create Package | Manage Package |
 +===================+==============+=================+================+================+================+================+
-| 1. Guest (Locked) | no           | no              | no             | no             | no             | YES            |
+| 1. Guest (Locked) | no           | no              | no             | no             | no             | no             |
 +-------------------+--------------+-----------------+----------------+----------------+----------------+----------------+
 | 2. Normal User    | YES          | YES             | YES            | no             | no             | no             |
 +-------------------+--------------+-----------------+----------------+----------------+----------------+----------------+
@@ -130,5 +130,5 @@ The following table lists the user positions and their privileges.
 | 9. Administrators | YES          | YES             | YES            | YES            | YES            | YES            |
 +-------------------+--------------+-----------------+----------------+----------------+----------------+----------------+
 
-`Power User` has advanced operations to import files from host paths and to execute Tasks in the Packages which is experimenting or under development.
-`Normal User` can only execute Tasks of Packages that are marked `Stable`.
+``Power User`` has advanced operations to import files from host paths and to execute Tasks in the Packages which is ``experimenting`` or ``under development``.
+``Normal User`` can only execute Tasks of Packages that are marked ``Stable``.

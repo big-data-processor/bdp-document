@@ -21,7 +21,6 @@ Welcome to Big Data Processor's documentation!
     Terminology<fundamentals/terms>
     Privilege<fundamentals/privilege>
     System Architecture<fundamentals/system-architecture>
-    
     Task Adapter<fundamentals/task-adapter>
 
 .. toctree::
@@ -42,7 +41,6 @@ Welcome to Big Data Processor's documentation!
     Task definitions
     Workflow Constructions
     
-    
 .. toctree::
     :maxdepth: 4
     :caption: Workflow Playbook
@@ -55,7 +53,7 @@ Welcome to Big Data Processor's documentation!
 
 .. toctree::
     :maxdepth: 4
-    :caption: Entry Page
+    :caption: Customized Page
 
 
 
@@ -65,7 +63,7 @@ Welcome to Big Data Processor's documentation!
 
 .. toctree::
     :maxdepth: 4
-    :caption: Quick Start
+    :caption: Tutorial
 
     Full steps to construct a pipeline<tutorials/tutorial-full-step-pipelines>
     Task deployment on Google Cloud Platform<tutorials/tutorial-task-deploy-GCP>
@@ -92,9 +90,11 @@ Welcome to Big Data Processor's documentation!
     :caption: System Administrations
 
     User managment
-    Package settings
+    Package Installations
+    Handling Adapters
     Enable Google 3rd party sign-in<administration/allow-google-sign-in>
     Enable Google reCAPTCHA
+    Enable Email Verifications
 
 
 
