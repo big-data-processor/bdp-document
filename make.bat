@@ -37,3 +37,4 @@ popd
 
 rmdir docs /S /Q
 xcopy /ey %BUILDDIR%\html docs\
+xcopy .nojekyll docs\
