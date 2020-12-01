@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=build
-set SPHINXPROJ=Bio-DataProcessor
+set SPHINXPROJ=BigDataProcessor
 
 if "%1" == "" goto help
 
@@ -34,3 +34,6 @@ goto end
 
 :end
 popd
+
+rmdir docs /S /Q
+xcopy /ey %BUILDDIR%\html docs\

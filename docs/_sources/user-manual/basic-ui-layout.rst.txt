@@ -1,0 +1,5 @@
+Basic Layout of the User Interface
+==================================
+
+.. image:: ../images/user-manual/basic-ui-layout.png
+   :width: 600
