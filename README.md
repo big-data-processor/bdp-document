@@ -1,6 +1,6 @@
-# The documentation of Big Data Processor
+# The documentation of BD-Processor
 
-This repo generates the documentations of Big Data Processor.
+This repo generates the documentations of BD-Processor.
 
 ([Click to view the documents on Github Pages](https://big-data-processor.github.io/bdp-document)).
 

@@ -19,8 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Big Data Processor'
-copyright = '2020, Chi Yang'
+project = 'BD-Processor'
+copyright = '2020-2021, Chi Yang'
 author = 'Chi Yang'
 
 # The short X.Y version
@@ -115,7 +115,7 @@ html_logo = './bdpstatic/bdp-logo-dark.svg'
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Big Data Processor Document'
+htmlhelp_basename = 'BD-Processor Document'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -142,7 +142,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'BigDataProcessor.tex', 'Big Data Processor Documentation',
+    (master_doc, 'BD-Processor.tex', 'BD-Processor Documentation',
      'Chi Yang', 'manual'),
 ]
 
@@ -152,7 +152,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'big-data-processor', 'Big Data Processor Documentation',
+    (master_doc, 'big-data-processor', 'BD-Processor Documentation',
      [author], 1)
 ]
 
@@ -163,8 +163,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'BigDataProcessor', 'Big Data Processor Documentation',
-     author, 'Chi Yang', 'The next generation data science workbench',
+    (master_doc, 'BigDataProcessor', 'BD-Processor Documentation',
+     author, 'Chi Yang', 'A next generation data science workbench',
      'Miscellaneous'),
 ]
 
