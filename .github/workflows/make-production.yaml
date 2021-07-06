@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python v3.8
@@ -25,7 +25,7 @@ jobs:
     - name: Checkout big-data-processor
       uses: actions/checkout@v2
       with:
-        repository: big-data-processor/big-data-processor
+        repository: big-data-processor/bd-processor
         token: ${{ secrets.chiyang_pat }}
         path: ./bdp-production
     - name: Update the production builds
@@ -47,4 +47,4 @@ jobs:
       with:
         github_token: ${{ secrets.chiyang_pat }}
         directory: './production-build'
-        repository: big-data-processor/big-data-processor
+        repository: big-data-processor/bd-processor
