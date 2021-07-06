@@ -22,7 +22,7 @@ jobs:
         pip install sphinx sphinx_rtd_theme
     - name: Build the bdp-document
       run: make html
-    - name: Checkout big-data-processor
+    - name: Checkout bd-processor
       uses: actions/checkout@v2
       with:
         repository: big-data-processor/bd-processor

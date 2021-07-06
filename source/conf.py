@@ -154,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'big-data-processor', 'BD-Processor Documentation',
+    (master_doc, 'bd-processor', 'BD-Processor Documentation',
      [author], 1)
 ]
 
@@ -165,7 +165,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'BigDataProcessor', 'BD-Processor Documentation',
+    (master_doc, 'BD-Processor', 'BD-Processor Documentation',
      author, 'Chi Yang', 'A next generation data science workbench',
      'Miscellaneous'),
 ]
